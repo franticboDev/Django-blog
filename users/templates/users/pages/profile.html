@@ -8,6 +8,9 @@
           <h2 class="account-heading">{{ user.username }}</h2>
           <p class="text-secondary">{{ user.first_name }} {{ user.last_name }}</p>
           <p class="text-secondary">{{ user.email }}</p>
+          {% if user.is_staff %}
+            <a class="text-secondary" href="{% url "admin:index" %}">Admin Page</a>
+          {% endif %}
         </div>
       </div>
       <!-- FORM HERE -->

@@ -9,12 +9,6 @@ from django.views.generic import (
 )
 from .models import Post
 
-def home(request):
-    context = {
-        'posts': Post.objects.all()
-    }
-    return render(request, 'blog/pages/home.html', context)
-
 class PostListView(ListView):
     model = Post
     template_name = 'blog/pages/home.html' #<app>/<model>_<viewtype>.html
